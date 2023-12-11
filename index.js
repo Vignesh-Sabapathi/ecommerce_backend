@@ -10,7 +10,7 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 
-//Image Storage Engine  
+//Image Storage Engine   
 const storage = multer.diskStorage({
     destination: './upload/images',
     filename: (req, file, cb) => {
