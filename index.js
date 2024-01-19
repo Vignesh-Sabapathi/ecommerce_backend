@@ -77,6 +77,10 @@ const Product = mongoose.model("Product", {
     type: String,
     required: true,
   },
+  description: {
+    type: String,
+    required: true,
+  },
   image: {
     type: String,
     required: true,
@@ -175,10 +179,10 @@ app.get("/newcollections", async (req, res) => {
   res.send(arr);
 });
 
-app.get("/popularinwomen", async (req, res) => {
+app.get("/popularinmemorials", async (req, res) => {
 	let products = await Product.find({});
   let arr = products.splice(0,  4);
-  console.log("Popular In Women");
+  console.log("Popular In Memorials");
   res.send(arr);
 });
 
@@ -225,6 +229,7 @@ app.post("/addproduct", async (req, res) => {
   const product = new Product({
     id: id,
     name: req.body.name,
+    description: req.body.description,
     image: req.body.image,
     category: req.body.category,
     new_price: req.body.new_price,
