@@ -6,6 +6,9 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
+const fs = require('fs');
+const rawData = fs.readFileSync('/Users/vignesh-16577/Downloads/MERN_Ecommerce/ecommerce_backend/upload/images/data.json');
+const data = JSON.parse(rawData);
 
 app.use(express.json());
 app.use(cors());
@@ -29,7 +32,7 @@ app.post("/upload", upload.single('product'), (req, res) => {
     })
 })
 
-mongoose.connect("mongodb+srv://vigneshsabapathi:Sabapathi3@cluster0.kj0t1dx.mongodb.net/e-commerce");
+mongoose.connect("mongodb+srv://vigneshsabapathi33:Sabapathi33@cluster0.huke4vk.mongodb.net/");
 
 
 // MiddleWare
@@ -167,23 +170,19 @@ app.post('/signup', async (req, res) => {
     })
 
 app.get("/allproducts", async (req, res) => {
-	let products = await Product.find({});
+	
   console.log("All Products");
-    res.send(products);
+  res.send(data.products);
 });
 
 app.get("/newcollections", async (req, res) => {
-	let products = await Product.find({});
-  let arr = products.slice(1).slice(-8);
-  console.log("New Collections");
-  res.send(arr);
+  console.log("All Products");
+  res.send(data.products);
 });
 
 app.get("/popularinmemorials", async (req, res) => {
-	let products = await Product.find({});
-  let arr = products.splice(0,  4);
-  console.log("Popular In Memorials");
-  res.send(arr);
+  console.log("All Products");
+  res.send(data.products);
 });
 
 //Create an endpoint for saving the product in cart

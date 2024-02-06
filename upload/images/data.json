@@ -1,0 +1,27 @@
+{
+    "products": [
+      {
+        "id": "1",
+        "name": "Angel Statue",
+        "discription": "this is a polished granite",
+        "image": "IMG_20191031_211107.jpg",
+        "category": "Granite",
+        "new_price": "30",
+        "old_price": "35",
+        "date": "2024-01-27T12:30:00Z",
+        "isAvailable": true
+      },
+      {
+        "id": "1",
+        "name": "Angel Statue 1",
+        "discription": "this is a polished granite",
+        "image": "IMG_20191031_211136.jpg",
+        "category": "Marble",
+        "new_price": "20",
+        "old_price": "25",
+        "date": "2024-01-27T12:30:00Z",
+        "isAvailable": false
+      }
+    ]
+  }
+  
